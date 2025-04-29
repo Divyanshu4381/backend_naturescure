@@ -12,8 +12,8 @@ const cartRoutes = require("./routes/cartRoutes");
 const emailRoutes=require("./routes/emailRoutes")
 const { uploadMiddleware } = require("./Middleware/multer");
 
-const path =require('path')
-const _dirname = path.resolve();
+// const path =require('path')
+// const _dirname = path.resolve();
 
 dotenv.config(); // Load environment variables
 
@@ -67,10 +67,10 @@ app.post("/api/chat", async (req, res) => {
   }
 });
 
-app.use(express.static(path.join(_dirname, "/frontend/dist")));
-app.get('*', (_,res) => {
-    res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
-});
+// app.use(express.static(path.join(_dirname, "/frontend/dist")));
+// app.get('*', (_,res) => {
+//     res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
+// });
 // ✅ Server Port
 const PORT = process.env.PORT ||  3000;
 app.listen(PORT , () => console.log(`🚀 Server running on port ${PORT}`));
